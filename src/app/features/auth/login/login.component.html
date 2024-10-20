@@ -1,0 +1,58 @@
+<div class="flex w-screen h-screen font-display">
+  <div class="form-layout">
+    <div class="heading-layout">
+      <h1 class="heading-title leading">Sign in here</h1>
+      <span class="subtitle">
+        If you don’t have an account register You can
+        <span class="font-bold text-blue-800">Register here !</span>
+      </span>
+    </div>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-2"
+    >
+      <global-input-text
+        formControlName="email"
+        label="Email or NPP"
+        placeholder="Input email or NPP here"
+        labelClass="w-full form-control custom-label-class"
+        inputClass="w-full cutom-input-class text-md"
+        type="email"
+        [required]="true"
+        icon="mail"
+        [errorMessage]="getEmailErrorMessage()"
+      ></global-input-text>
+      <global-input-password
+        formControlName="password"
+        label="Password"
+        placeholder="Input password "
+        labelClass="w-full form-control custom-label-class"
+        inputClass="w-full custom-input-class text-md"
+        type="password"
+        [required]="true"
+        icon="lock"
+        [errorMessage]="getPassErrorMessage()"
+      >
+      </global-input-password>
+      <global-captcha
+        label="Captcha"
+        placeholder="e.g.MUHSH"
+        labelClass="w-full form-control custom-label-class text-md"
+        inputClass="w-full custom-input-class text-md"
+        [required]="true"
+        icon="new_releases_outline"
+      ></global-captcha>
+      <button class="mt-2 text-white btn bg-primary-blue" type="submit">
+        Login
+      </button>
+    </form>
+  </div>
+  <div class="image-layout image-background">
+    <img
+      src="assets/images/illustrasi.svg"
+      alt="login-illustration"
+      class="image-illustration"
+    />
+  </div>
+</div>

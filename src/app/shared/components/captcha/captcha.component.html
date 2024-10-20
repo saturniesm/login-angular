@@ -1,0 +1,47 @@
+<div class="flex flex-col items-center justify-center w-full">
+  <canvas #captchaCanvas class="w-1/2 rounded-md"></canvas>
+  <div class="flex flex-col items-start w-full -mt-2">
+    <label [ngClass]="labelClass">
+      <div class="px-0 label">
+        <span class="text-md label-text"
+          >{{ label }}
+          <span *ngIf="required">
+            <span class="font-bold text-red-500">*</span>
+          </span>
+        </span>
+      </div>
+
+      <div class="flex w-full gap-2">
+        <div class="flex items-center w-full gap-2 input input-bordered">
+          <mat-icon class="text-blue-800" fontSet="material-icons-outlined">
+            {{ icon }}</mat-icon
+          >
+          <input
+            [formControl]="captchaControl"
+            class="grow"
+            [type]="type"
+            [placeholder]="placeholder"
+            [ngClass]="inputClass"
+            [required]="required"
+            (input)="updateVerificationMessage($event)"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-square bg-primary-blue"
+          (click)="generateNewCaptcha()"
+        >
+          <mat-icon fontSet="material-icons-outlined" class="text-white"
+            >refresh</mat-icon
+          >
+        </button>
+      </div>
+    </label>
+    <span
+      *ngIf="!!verificationMessage"
+      class="flex items-start text-sm text-red-500"
+    >
+      {{ verificationMessage }}
+    </span>
+  </div>
+</div>

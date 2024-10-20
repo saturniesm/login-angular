@@ -1,0 +1,23 @@
+@tailwind components;
+@tailwind utilities;
+@tailwind base;
+
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@9,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons+Round");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded");
+
+body {
+  @apply font-sans bg-white;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
